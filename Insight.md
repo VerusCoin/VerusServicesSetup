@@ -8,7 +8,7 @@ A VPS with 4GB of RAM, anything from 20GB SSD storage and 2 CPU cores is the abs
 
 ## Operating System
 
-This guide tailored to and tested on `Debian 10 "Buster"` but should probably also work on Debian-ish derivatives like `Devuan` or `Ubuntu` and others. Before starting, please install the latest updates and prerequisites. 
+This guide tailored to and tested on `Debian 10 "Buster"` but should probably also work on Debian-ish derivatives like `Devuan` or `Ubuntu` and others. Before starting, please install the latest updates and prerequisites.
 
 ```bash
 apt update
@@ -23,7 +23,7 @@ apt install dphys-swapfile
 
 ## Verus Node
 
-Create a user account for the Verus node and switch to it. 
+Create a user account for the Verus node and switch to it.
 
 ```bash
 useradd -m -d /home/verus -s /bin/bash verus
@@ -44,13 +44,13 @@ exit
 su - verus
 ```
 
-Download the **latest** (`v0.7.2-6` used in this example) Verus binaries from the [GitHub Releases Page](https://github.com/VerusCoin/VerusCoin/releases). Unpack, move them into place and clean up like so: 
+Download the **latest** (`v0.7.2-6` used in this example) Verus binaries from the [GitHub Releases Page](https://github.com/VerusCoin/VerusCoin/releases). Unpack, move them into place and clean up like so:
 
 ```bash
-wget https://github.com/VerusCoin/VerusCoin/releases/download/v0.7.2-6/Verus-CLI-Linux-v0.7.2-6-amd64.tgz
-tar xf Verus-CLI-Linux-v0.7.2-6-amd64.tgz; tar xf Verus-CLI-Linux-v0.7.2-6-amd64.tar.gz
+wget https://github.com/VerusCoin/VerusCoin/releases/download/v0.7.2-8/Verus-CLI-Linux-v0.7.2-8-amd64.tgz
+tar xf Verus-CLI-Linux-v0.7.2-8-amd64.tgz; tar xf Verus-CLI-Linux-v0.7.2-8-amd64.tar.gz
 mv verus-cli/{fetch-params,fetch-bootstrap,verusd,verus} ~/bin
-rm -rf verus-cli Verus-CLI-Linux-v0.7.2-6-amd64.t*
+rm -rf verus-cli Verus-CLI-Linux-v0.7.2-8-amd64.t*
 ```
 
 Use the supplied script to download a copy of the `zcparams` data. Watch for and fix any occuring errors until you can be sure you successfully have gotten a complete `zcparams` copy.
@@ -71,7 +71,7 @@ Install bootstrap in /home/verus/.komodo/VRSC? ([1]Yes/[2]No)<1><return>
 Bootstrap successfully installed
 ```
 
-Create (and where necessary, adapt) a `VRSC.conf` file that has the necessary additional settings for Insight (namely `zmqpubrawtx` and `zmqpubhashblock`). 
+Create (and where necessary, adapt) a `VRSC.conf` file that has the necessary additional settings for Insight (namely `zmqpubrawtx` and `zmqpubhashblock`).
 
 ```bash
 cat << EOF > ~/.komodo/VRSC/VRSC.conf
@@ -118,7 +118,7 @@ addnode=136.243.227.142:27485
 addnode=5.9.224.250:27485   
 addnode=95.216.104.210:27485
 addnode=135.181.68.2:27485
-addnode=185.25.48.236:27485 
+addnode=185.25.48.236:27485
 addnode=185.64.105.111:27485
 
 # EOF
@@ -160,7 +160,7 @@ mkdir ~/bin
 echo export PATH=\"${PATH}:/home/insight/bin\" >> ~/.bashrc
 ```
 
-Install NodeJS v9 using `nvm.sh` like this: 
+Install NodeJS v9 using `nvm.sh` like this:
 
 ```bash
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash

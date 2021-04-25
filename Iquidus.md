@@ -47,13 +47,13 @@ exit
 su - verus
 ```
 
-Download the **latest** (`v0.7.2-6` used in this example) Verus binaries from the [GitHub Releases Page](https://github.com/VerusCoin/VerusCoin/releases). Unpack, move them into place and clean up like so: 
+Download the **latest** (`v0.7.2-8` used in this example) Verus binaries from the [GitHub Releases Page](https://github.com/VerusCoin/VerusCoin/releases). Unpack, move them into place and clean up like so: 
 
 ```bash
-wget https://github.com/VerusCoin/VerusCoin/releases/download/v0.7.2-6/Verus-CLI-Linux-v0.7.2-6-amd64.tgz
-tar xf Verus-CLI-Linux-v0.7.2-6-amd64.tgz; tar xf Verus-CLI-Linux-v0.7.2-6-amd64.tar.gz
+wget https://github.com/VerusCoin/VerusCoin/releases/download/v0.7.2-6/Verus-CLI-Linux-v0.7.2-8-amd64.tgz
+tar xf Verus-CLI-Linux-v0.7.2-8-amd64.tgz; tar xf Verus-CLI-Linux-v0.7.2-8-amd64.tar.gz
 mv verus-cli/{fetch-params,fetch-bootstrap,verusd,verus} ~/bin
-rm -rf verus-cli Verus-CLI-Linux-v0.7.2-6-amd64.t*
+rm -rf verus-cli Verus-CLI-Linux-v0.7.2-8-amd64.t*
 ```
 
 Use the supplied script to download a copy of the `zcparams` data. Watch for and fix any occuring errors until you can be sure you successfully have gotten a complete `zcparams` copy.
@@ -191,10 +191,10 @@ While still logged in as the `iquidus` user, clone the Iquidus repository.
 
 ```bash
 cd ~/
-git clone https://github.com/BloodyNora/explorer
+git clone https://github.com/Oink70/explorer
 ```
 
-See https://github.com/BloodyNora/explorer for the basic of install instructions of Iquidus. Read this document thoroughly, it contains information about the MongoDB backend, necessary steps for initial data import (also see right below) and keeping the explorer in sync with the Verus chain. 
+See https://github.com/Oink70/explorer for the basic of install instructions of Iquidus. Read this document thoroughly, it contains information about the MongoDB backend, necessary steps for initial data import (also see right below) and keeping the explorer in sync with the Verus chain. 
 
 **NOTE:** Before starting an init sync, in the resulting installed `node_modules`, we need to disable `json-bigint strict mode` in 3 places: 
 
