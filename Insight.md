@@ -114,12 +114,12 @@ checklevel=4
 checkblocks=1440
 
 # addnodes
-addnode=136.243.227.142:27485
-addnode=5.9.224.250:27485   
-addnode=95.216.104.210:27485
-addnode=135.181.68.2:27485
-addnode=185.25.48.236:27485
-addnode=185.64.105.111:27485
+addnode=157.90.113.198:27485
+addnode=136.243.31.96:27485   
+addnode=95.217.1.76:27485
+addnode=45.79.111.201:27485
+addnode=45.79.237.198:27485
+addnode=66.228.59.168:27485
 
 # EOF
 EOF
@@ -160,10 +160,10 @@ mkdir ~/bin
 echo export PATH=\"${PATH}:/home/insight/bin\" >> ~/.bashrc
 ```
 
-Install NodeJS v9 using `nvm.sh` like this:
+Install NodeJS v20 using `nvm.sh` like this:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
 
 To activate the changes, log out of and back into the `insight` account.
