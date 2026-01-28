@@ -79,9 +79,6 @@ cat << EOF > ~/.komodo/VRSC/VRSC.conf
 ## verus insight node config
 ##
 
-# explorer doesn't need a wallet
-disablewallet=1
-
 # insight-related options
 zmqpubrawtx=tcp://127.0.0.1:27487
 zmqpubhashblock=tcp://127.0.0.1:27487
