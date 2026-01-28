@@ -102,48 +102,32 @@ banscore=25
 # stake if possible, although it's probably not helping much
 mint=1
 
-# seednodes
-seednode=66.228.59.168:27485
-seednode=172.104.48.148:27485
-seednode=45.79.237.198:27485
-seednode=45.79.111.201:27485
-seednode=95.217.1.76:27485
-seednode=157.90.155.113:27485
-seednode=157.90.113.198:27485
-seednode=95.216.104.210:27487
-
-# addnodes (Insight explorers)
+# addnodes
+addnode=167.235.72.129:27485
+addnode=136.243.31.102:27485
+addnode=77.42.48.58:27485
+addnode=136.243.227.138:27485
+addnode=135.181.68.2:27485
+addnode=136.243.31.101:27485
 addnode=157.90.127.142:27485
-addnode=157.90.248.145:27485
-addnode=135.181.253.217:27485
-
-# addnodes (Iquidus explorers)
+addnode=136.243.31.97:27485
+addnode=77.42.48.57:27485
 addnode=95.216.104.214:27485
-addnode=135.181.68.6:27485
-addnode=168.119.27.246:27485
-
-# addnodes (ElectrumX servers)
-addnode=168.119.166.240:27485
-addnode=157.90.155.8:27485
-addnode=65.21.63.161:27485
-
-# addnodes (pools)
-## Oink#3612 / pool.veruscoin.io
-addnode=136.243.227.137:27485
+addnode=136.243.31.98:27485
+addnode=135.181.186.8:27485
+addnode=157.90.113.198:27485
+addnode=157.90.155.113:27485
+addnode=136.243.31.96:27485
+addnode=95.217.1.76:27485
+addnode=77.42.48.56:27485
+addnode=45.79.237.198:27485
+addnode=172.104.48.148:27485
+addnode=66.228.59.168:27485
+addnode=176.9.103.23:27485
 addnode=162.55.8.164:27485
-## Dudezmobi Staking Pool
-addnode=152.32.95.164:27485
-## Quipacorn#5205 / verus.farm
-addnode=82.59.55.162:27485
-## Uncharted#3880 / verus.aninterestinghole.xyz
-addnode=136.56.61.241:27485
-## / verus.quick-pool.io
-addnode=164.128.166.226:27485
-## / verus.wattpool.net
-addnode=144.217.83.45:27485
-## CiscoTech#7806 / vrsc.ciscotech.dk
-addnode=188.183.103.90:27485
-## Quipacorn#5205 / verus.farm
+addnode=136.243.227.137:27485
+addnode=152.228.135.1:27485
+addnode=51.75.25.174:27485
 addnode=162.55.59.82:27485
 
 ```
