@@ -4,16 +4,16 @@
 
 ## Server
 
-A VPS with 4GB of RAM, anything from 20GB SSD storage and 2 CPU cores is the absolute minimum requirement. Start following the guide while logged in as `root`.
+A VPS with 8GB of RAM, anything from 60GB SSD storage and 2 CPU cores is the absolute minimum requirement. Start following the guide while logged in as `root`.
 
 ## Operating System
 
-This guide tailored to and tested on `Debian 10 "Buster"` but should probably also work on Debian-ish derivatives like `Devuan` or `Ubuntu` and others. Before starting, please install the latest updates and prerequisites.
+This guide tailored to and tested on `Debian 12 "bookworm"` but should probably also work on Debian-ish derivatives like `Devuan` or `Ubuntu` and others. Before starting, please install the latest updates and prerequisites.
 
 ```bash
 apt update
 apt upgrade
-apt install wget libgomp1 git python build-essential libzmq3-dev
+apt install wget libgomp1 git python build-essential libzmq3-dev libzmq5
 ```
 With the minimum memory requirement above, `dphys-swapfile` will be necessary. It will create a 2GB swap file per default, which is sufficient. In situations where more memory is available, installation of `dphys-swapfile` can be skipped altogether.
 
@@ -44,13 +44,13 @@ exit
 su - verus
 ```
 
-Download the **latest** (`v0.7.2-6` used in this example) Verus binaries from the [GitHub Releases Page](https://github.com/VerusCoin/VerusCoin/releases). Unpack, move them into place and clean up like so:
+Download the **latest** (`v1.2.12-1` used in this example) Verus binaries from the [GitHub Releases Page](https://github.com/VerusCoin/VerusCoin/releases). Unpack, move them into place and clean up like so:
 
 ```bash
-wget https://github.com/VerusCoin/VerusCoin/releases/download/v0.7.2-8/Verus-CLI-Linux-v0.7.2-8-amd64.tgz
-tar xf Verus-CLI-Linux-v0.7.2-8-amd64.tgz; tar xf Verus-CLI-Linux-v0.7.2-8-amd64.tar.gz
+wget https://github.com/VerusCoin/VerusCoin/releases/download/v1.2.12-1/Verus-CLI-Linux-v1.2.12-1-amd64.tgz
+tar xf Verus-CLI-Linux-v1.2.12-1-amd64.tgz; tar xf Verus-CLI-Linux-v1.2.12-1-amd64.tar.gz
 mv verus-cli/{fetch-params,fetch-bootstrap,verusd,verus} ~/bin
-rm -rf verus-cli Verus-CLI-Linux-v0.7.2-8-amd64.t*
+rm -rf verus-cli Verus-CLI-Linux-v1.2.12-1-amd64.t*
 ```
 
 Use the supplied script to download a copy of the `zcparams` data. Watch for and fix any occuring errors until you can be sure you successfully have gotten a complete `zcparams` copy.
@@ -114,12 +114,12 @@ checklevel=4
 checkblocks=1440
 
 # addnodes
-addnode=136.243.227.142:27485
-addnode=5.9.224.250:27485   
-addnode=95.216.104.210:27485
-addnode=135.181.68.2:27485
-addnode=185.25.48.236:27485
-addnode=185.64.105.111:27485
+addnode=157.90.113.198:27485
+addnode=136.243.31.96:27485   
+addnode=95.217.1.76:27485
+addnode=45.79.111.201:27485
+addnode=45.79.237.198:27485
+addnode=66.228.59.168:27485
 
 # EOF
 EOF
@@ -160,10 +160,10 @@ mkdir ~/bin
 echo export PATH=\"${PATH}:/home/insight/bin\" >> ~/.bashrc
 ```
 
-Install NodeJS v9 using `nvm.sh` like this:
+Install NodeJS v20 using `nvm.sh` like this:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
 
 To activate the changes, log out of and back into the `insight` account.
@@ -173,17 +173,17 @@ exit
 su - insight
 ```
 
-Install and activate NodeJS v9.
+Install and activate NodeJS v20.
 
 ```
-nvm install 9
-nvm use 9
+nvm install 20
+nvm use 20
 ```
 
-Within the `insight` account scope, globally install `pm2 v4.2.1` and `bitcore-node` as shown below.
+Within the `insight` account scope, globally install `pm2` and `bitcore-node` as shown below.
 
 ```bash
-npm -g install pm2@4.2.1 git+https://github.com/VerusCoin/bitcore-node-komodo.git
+npm -g install pm2 git+https://github.com/VerusCoin/bitcore-node-komodo.git
 ```
 
 Since we opted to use the newest NodeJS version the v0.4.3 insight API supports, we'll need to go a slightly different route than shown in other guides. Prepare a directory structure for Insight.
@@ -264,10 +264,21 @@ Enter the `node_modules` directory, clone the needed repositories and install th
 ```bash
 cd ~/insight.VRSC/node_modules
 git clone https://github.com/VerusCoin/insight-ui-komodo
-mkdir api
 git clone https://github.com/VerusCoin/insight-api-komodo ./api
 cd api
 npm install --production
+```
+
+Create a `blocked.json` file in the root of the `vrsc.insight` folder
+
+```bash
+cat << EOF > ~/insight.VRSC/blocked.json
+{
+  "addresses": [
+    "RTqQe58LSj2yr5CrwYFwcsAQ1edQwmrkUU"
+  ],
+  "reason": "These addresses cause daemon performance issues and are blocked from queries"
+}
 ```
 
 Now launch Insight using `pm2` and follow the log output to make sure Insight launches allright.
