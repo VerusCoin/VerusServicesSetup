@@ -109,10 +109,6 @@ logips=1
 shrinkdebugfile=0
 debug=0
 
-# checks
-checklevel=4
-checkblocks=1440
-
 # addnodes
 addnode=157.90.113.198:27485
 addnode=136.243.31.96:27485   
