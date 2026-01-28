@@ -79,9 +79,6 @@ cat << EOF > ~/.komodo/VRSC/VRSC.conf
 ## verus insight node config
 ##
 
-# explorer doesn't need a wallet
-disablewallet=1
-
 # insight-related options
 zmqpubrawtx=tcp://127.0.0.1:27487
 zmqpubhashblock=tcp://127.0.0.1:27487
@@ -109,17 +106,33 @@ logips=1
 shrinkdebugfile=0
 debug=0
 
-# checks
-checklevel=4
-checkblocks=1440
-
 # addnodes
+addnode=167.235.72.129:27485
+addnode=136.243.31.102:27485
+addnode=77.42.48.58:27485
+addnode=136.243.227.138:27485
+addnode=135.181.68.2:27485
+addnode=136.243.31.101:27485
+addnode=157.90.127.142:27485
+addnode=136.243.31.97:27485
+addnode=77.42.48.57:27485
+addnode=95.216.104.214:27485
+addnode=136.243.31.98:27485
+addnode=135.181.186.8:27485
 addnode=157.90.113.198:27485
-addnode=136.243.31.96:27485   
+addnode=157.90.155.113:27485
+addnode=136.243.31.96:27485
 addnode=95.217.1.76:27485
-addnode=45.79.111.201:27485
+addnode=77.42.48.56:27485
 addnode=45.79.237.198:27485
+addnode=172.104.48.148:27485
 addnode=66.228.59.168:27485
+addnode=176.9.103.23:27485
+addnode=162.55.8.164:27485
+addnode=136.243.227.137:27485
+addnode=152.228.135.1:27485
+addnode=51.75.25.174:27485
+addnode=162.55.59.82:27485
 
 # EOF
 EOF
